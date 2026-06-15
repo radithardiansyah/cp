@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 #include <vector>
-//baris menggambarkan banyak troops, jika troops sisa floor
+
 int main(){
     long long howManyTestCase = 0;
     cin >> howManyTestCase;
@@ -9,10 +9,6 @@ int main(){
     for(int i = 0; i < howManyTestCase; i++){
         cin >> warriors[i];
     }
-    //loop mengambil nilai dari warriors
-    //nilai dari warriors menjadi warrior di taruh di loop sebanyak dirinya dan akan terus dikurangkan dengan variabel row yg akan terus bertambah
-    //jika varibel warrior != 0 && <0 stop dan masukkan rowsFit ke vector output
-    //kondisi 1 != 0 
     vector<long long>output;
 
     int row = 1;

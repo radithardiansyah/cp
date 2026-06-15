@@ -10,13 +10,10 @@ int fpb(int a, int b) {
     }
     return a;
 }
-int fpb(int a, int b){
-    while (b !)
-}
 
 // Fungsi untuk mencari KPK
-int kpb(int a, int b) {
-    if (a == 0 || b == 0) return 0;
+int kpk(int a, int b){
+    if(a == 0 || b == 0) return 0;
     return (a * b) / fpb(a, b);
 }
 
