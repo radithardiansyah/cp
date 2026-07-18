@@ -2,7 +2,6 @@
 using namespace std;
 #include <iomanip>
 
-
 int main(){
 int periods;
 cin >> periods;
