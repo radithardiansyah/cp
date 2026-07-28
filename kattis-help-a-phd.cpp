@@ -19,7 +19,9 @@ for(int i = 0; i < n; i++){
 
     }
   
-
+//find = find
+//substr = mengambil bagian string ada dua versi (start, end) atau (start)
+//stoi ubah string ke angka
 }
     return 0;
 }
