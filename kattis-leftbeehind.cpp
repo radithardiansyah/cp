@@ -22,7 +22,8 @@ if(sweet == 0 && sour == 0){
       cout << "Left beehind."  << "\n";
 }
 }
-
+//need to understand the problem
+//if else order is matter
 
 
     return 0;
