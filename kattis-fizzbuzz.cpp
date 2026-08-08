@@ -1,16 +1,24 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
+int main() {
+    int X, Y, N;
+    cin >> X >> Y >> N;
 
-int main(){
-int x, y, n;
-cin >> x >> y >> n;
-for(int i = 0; i < n; i++){
- if(x % i+1 == 0){
-    cout << "fizz" << "\n";
- }else{
-    cout<<i+1<<"\n";
- }
-}
+    for (int i = 1; i <= N; i++) {
+        if (i % X == 0 && i % Y == 0) {
+            cout << "FizzBuzz\n";
+        }
+        else if (i % X == 0) {
+            cout << "Fizz\n";
+        }
+        else if (i % Y == 0) {
+            cout << "Buzz\n";
+        }
+        else {
+            cout << i << "\n";
+        }
+    }
+
     return 0;
 }
