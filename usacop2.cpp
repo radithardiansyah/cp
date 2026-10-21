@@ -1,3 +1,5 @@
+//2000 jam, dengan waktu 11 tahun. spend more time, tracking too?
+
 #include <iostream>
 using namespace std;
 #include <vector>
@@ -14,7 +16,7 @@ int main(){
 		
 	}
 		for(int i = 0; i < n_sapi; i++){
-		cin >> sapi_2[i];
+		cin >> sapi_2[i];:
 		
 	}
 
