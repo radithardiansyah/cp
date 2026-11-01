@@ -2,38 +2,33 @@
 using namespace std;
 #include<vector>
 #include<algorithm>
+#include <bits/stdc++.h>
 int main()
 { 
+	//kondisi pengecekkan di mana diurutkan menggunakan biner
+	//lalu jika biner kembar, maka akan dibandingkan siapa lebih besar integernya
 	int n;
 	cin >> n;
-	vector<pair<int, int>>meetings;
-	for(int i = 0; i < n; ++i)
+	vector<int>arr(n);
+
+	for(int i = 0; i < n; i++)
 	{
-		int start_time, end_time;
-		cin >> start_time >> end_time;
-		meetings.push_back({start_time, end_time});
+		cin >> arr[i];
 	}
-	sort(meetings.begin(), meetings.end(), [](const pair<int, int> &a, const pair<int, int> &b)
-			{
-			if(a.second != b.second)
-			{
-			return a.second < b.second;
-			}
-			return a.first < b.first;
-			});
-
-	int total_meetings = 0;
-	int last_end_time = -1;
-
-	for(int i = 0; i < n; ++i)
-	{
-		if(meetings[i].first >= last_end_time)
-		{
-			total_meetings++;
-			last_end_time = meetings[i].second;
-		}
 	
+	sort(arr.begin(), arr.end(), [](const int &a, const int &b)
+			{
+			if(__builtin_popcount(a) != __builtin_popcount(b))
+			{
+			return __builtin_popcount(a) < __builtin_popcount(b);
+			}
+			return a < b;
+
+			});
+	for(int i = 0; i < n; i++)
+	{
+		cout << arr[i];
 	}
-	cout << total_meetings << "\n";
+	
 		return 0;
 }
