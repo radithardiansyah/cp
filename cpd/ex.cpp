@@ -1,42 +1,32 @@
 #include<iostream>
 using namespace std;
-#include <vector>
-#include <algorithm>
-#include <string>
-struct Team 
-{
-string name;
-int solved_problems;
-int penalty_time;
-};
+#include<algorithm>
+#include<string>
+#include<vector>
 int main()
 {
-	int n;
-	cin >> n;
-	vector<Team>teams(n);
-	for(int i = 0; i < n; ++i)
+	vector<int>arr = {3, 30, 34, 5, 9};
+	int n = arr.size();
+	
+	vector<string>arr_string(n);
+
+	for(int i = 0; i < n; i++)
 	{
-		cin >> teams[i].name;
-		cin >> teams[i].solved_problems;
-		cin >> teams[i].penalty_time;
-
+		arr_string[i] = to_string(arr[i]);
 	}
-	sort(teams.begin(), teams.end(), [](const Team &a,const Team &b)
+	sort(arr_string.begin(), arr_string.end(), [](const string &a, const string &b)
 			{
-if(a.solved_problems != b.solved_problems)
-{
-return a.solved_problems > b.solved_problems;
-}
-if(a.penalty_time != b.penalty_time)
-{
-return a.penalty_time < b.penalty_time;
-
-}
-return a.name < b.name;
-
+			return a + b > b + a;
 
 
 			});
 
-return 0;
+	for(int i = 0; i < n; i++)
+	{
+		cout << arr_string[i];
+	}
+	
+
+
+	return 0;
 }
