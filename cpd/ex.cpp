@@ -1,32 +1,39 @@
 #include<iostream>
 using namespace std;
-#include<algorithm>
-#include<string>
 #include<vector>
+#include<algorithm>
 int main()
-{
-	vector<int>arr = {3, 30, 34, 5, 9};
-	int n = arr.size();
-	
-	vector<string>arr_string(n);
-
-	for(int i = 0; i < n; i++)
+{ 
+	int n;
+	cin >> n;
+	vector<pair<int, int>>meetings;
+	for(int i = 0; i < n; ++i)
 	{
-		arr_string[i] = to_string(arr[i]);
+		int start_time, end_time;
+		cin >> start_time >> end_time;
+		meetings.push_back({start_time, end_time});
 	}
-	sort(arr_string.begin(), arr_string.end(), [](const string &a, const string &b)
+	sort(meetings.begin(), meetings.end(), [](const pair<int, int> &a, const pair<int, int> &b)
 			{
-			return a + b > b + a;
-
-
+			if(a.second != b.second)
+			{
+			return a.second < b.second;
+			}
+			return a.first < b.first;
 			});
 
-	for(int i = 0; i < n; i++)
+	int total_meetings = 0;
+	int last_end_time = -1;
+
+	for(int i = 0; i < n; ++i)
 	{
-		cout << arr_string[i];
-	}
+		if(meetings[i].first >= last_end_time)
+		{
+			total_meetings++;
+			last_end_time = meetings[i].second;
+		}
 	
-
-
-	return 0;
+	}
+	cout << total_meetings << "\n";
+		return 0;
 }
