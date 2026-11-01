@@ -2,15 +2,41 @@
 using namespace std;
 #include <vector>
 #include <algorithm>
+#include <string>
+struct Team 
+{
+string name;
+int solved_problems;
+int penalty_time;
+};
 int main()
 {
-	int arr[10] = {1,5,4,3,6,7,8,2,3,6};
-	int n = sizeof(arr)/sizeof(arr[0]);
-	sort(arr + 2, arr+8);
-
-	for(int i = 0; i < n; i++)
+	int n;
+	cin >> n;
+	vector<Team>teams(n);
+	for(int i = 0; i < n; ++i)
 	{
-		cout << arr[i] << " ";
+		cin >> teams[i].name;
+		cin >> teams[i].solved_problems;
+		cin >> teams[i].penalty_time;
+
 	}
+	sort(teams.begin(), teams.end(), [](const Team &a,const Team &b)
+			{
+if(a.solved_problems != b.solved_problems)
+{
+return a.solved_problems > b.solved_problems;
+}
+if(a.penalty_time != b.penalty_time)
+{
+return a.penalty_time < b.penalty_time;
+
+}
+return a.name < b.name;
+
+
+
+			});
+
 return 0;
 }
